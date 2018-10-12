@@ -12,25 +12,25 @@
 
 ## 介绍
 
-到目前为止，您可能已经在浏览器和服务器上使用 ECMAScript 5 的 JavaScript 版本工作过. ECMAScript 是一个不断发展的标准，完整的历史记录我们不在这里介绍。
+到目前为止,您可能已经在浏览器和服务器上使用 ECMAScript 5 的 JavaScript 版本工作过. ECMAScript 是一个不断发展的标准,完整的历史记录我们不在这里介绍.
 
-但你可能也听说过这个叫做 ECMAScript 6, ES6或ES2015的东西 ( 他们有点错过了那段时期 )。 [ES6]（http://es6-features.org/）是JavaScript的下一个规范，由于 Node.js 5，ES6最终开始在浏览器和服务器上以主要方式出现。
+但你可能也听说过这个叫做 ECMAScript 6, ES6或ES2015的东西 ( 他们有点错过了那段时期 ). [ES6](http://es6-features.org/) 是JavaScript的下一个规范,由于 Node.js 5,ES6最终开始在浏览器和服务器上以主要方式出现.
 
-您可以在Node.js [here]（https://nodejs.org/en/docs/es6/）中获得 ES6 功能的完整纲要; 但是我们也将给您介绍在即将到来的实验室中可能会看到的功能。 对于我们的目的，任何可以通过简单的"strict mode"声明启用的东西都是公平的游戏 - 但我们不会教你关于`--es_staging`或`--harmony`标志背后的东西。
+您可以在Node.js [here](https://nodejs.org/en/docs/es6/)中获得 ES6 功能的完整纲要; 但是我们也将给您介绍在即将到来的实验室中可能会看到的功能. 对于我们的目的,任何可以通过简单的"strict mode"声明启用的东西都是公平的游戏 - 但我们不会教你关于`--es_staging`或`--harmony`标志背后的东西.
 
-## 旁白：严格模式
+## 旁白:严格模式
 
-旁白：严格模式你可能还没有遇到它（至少知情），但是 ES5 有一种方法可以选择一种特殊的JavaScript版本[_strict mode_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode).
+旁白:严格模式你可能还没有遇到它(至少知情),但是 ES5 有一种方法可以选择一种特殊的JavaScript版本[_strict mode_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode).
 
-您可以在上面的链接中阅读有关严格模式的详细信息 - 通常，它会将 静默失败 转变为抛出错误，并且有助于防止变量潜入全局范围.
+您可以在上面的链接中阅读有关严格模式的详细信息 - 通常,它会将 静默失败 转变为抛出错误,并且有助于防止变量潜入全局范围.
 
-也就是说, 在标准模式下, 将运行以下代码 - 它不会执行任何操作：
+也就是说, 在标准模式下, 将运行以下代码 - 它不会执行任何操作:
 
 ```javascript
 delete Object.prototype;
 ```
 
-But in strict mode, this would throw a `TypeError`:
+但在严格的模式下, 这将抛出TypeError:
 
 ```javascript
 "use strict";
@@ -38,13 +38,13 @@ But in strict mode, this would throw a `TypeError`:
 delete Object.prototype;
 ```
 
-Strict mode can be invoked by writing
+可以通过书写调用严格模式.
 
 ```javascript
 'use strict';
 ```
 
-在当前脚本的顶部 - 严格模式然后适用于整个脚本。 或者，您可以将严格模式应用于各个功能：
+在当前脚本的顶部 - 严格模式适用于整个脚本. 或者, 您可以将严格模式应用于各个功能:
 
 ```javascript
 function strictFunction() {
@@ -59,13 +59,13 @@ function standardFunction() {
   delete Object.prototype
 }
 ```
-严格模式就像它的名字所暗示的那样：它对代码的执行强制执行_stricter_规则。 请注意，一些转换器（如[babel]（http://babeljs.io/））可以为您设置严格模式。
+严格模式就像它的名字所暗示的那样:它对代码的执行强制执行_stricter_规则. 请注意,一些转换器(如[babel](http://babeljs.io/)可以为您设置严格模式.
 
-严格模式还支持ES6开发人员希望确保用户明确选择使用的一些新功能。
+严格模式还支持ES6开发人员希望确保用户明确选择使用的一些新功能.
 
 ## ES6 功能
 
-There are a lot of new features, but for now we'll cover a subset of the new features below.
+有许多新的功能, 但是现在我们将介绍下面新功能的一部分.
 
 * [`const` and `let`](#block-scoping)
 * [Classes](#classes-use-strict)
@@ -80,7 +80,7 @@ There are a lot of new features, but for now we'll cover a subset of the new fea
 
 #### `let` ("use strict")
 
-The keyword [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let) is a new way of declaring local variables. How does it differ from good ol' `var`? Variables declared with `let` have block-level scope:
+关键词 [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)是一种声明局部变量的新方法. 它与 `var` 有什么不同? 用`let`声明的变量具有块级范围:
 
 ```javascript
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Scoping_rules
@@ -94,13 +94,13 @@ function letTest() {
 }
 ```
 
-Notice how `x` declared outside of the `if` block differs from the `x` declared inside the block. Block-level scope means that the variable is available only in the block (`if`, `for`, `while`, etc.) in which it is defined; it differs from JavaScript's normal function-level scope, which restricts the variable to the function in which it is defined (or `global`/`window` if it's a global variable).
+注意`if`块之外声明的`x`与块内声明的`x`不同. 块级作用域意味着该变量仅在定义它的块(`if`,`for`,`while`等)中可用, 它不同于正常 JavaScript 范围的函数层级, 它将变量限制为定义它的函数( 如果它是全局变量, 则限制为`global` /`window`).
 
 #### `const`
 
-The keyword [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) does not require strict mode. Like `let`, it declares a variable with block-level scope; additionally, it prevents its variable identifier from being reassigned.
+关键字 [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const) 不需要严格模式. 与`let`一样, 它声明了一个具有块级范围的变量; 另外,它可以防止重新分配其变量标识符.
 
-That means that the following will throw an error:
+这意味着以下将抛出错误:
 
 ```javascript
 const myVariable = 1;
@@ -108,7 +108,7 @@ const myVariable = 1;
 myVariable = 2; // syntax error
 ```
 
-However, this does not mean that the variable's value is immutable — the value can still change.
+但是,这并不意味着变量的值是不可变的 - 值仍然可以改变.
 
 ```javascript
 const myObject = {};
@@ -122,11 +122,11 @@ console.log(myObject.myProperty)
 
 ### Classes ("use strict")
 
-"Wait," you say. "JavaScript has prototypal, not class-based, inheritance."
+"等等," 你说. "JavaScript具有原型, 而不是基于类的继承."
 
-You're still right. But [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) in JavaScript are awesome, and you'll be seeing them increasingly as ES6 adoption increases.
+你还是对的. 但是JavaScript中的 [classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)非常强大的, 当你深入研究ES6, 你会越来越多地看到它们.
 
-Consider the following simple example, based largely on the examples from MDN. We want to create a `Polygon` prototype and inherit from it. We'll start with ES5:
+考虑以下简单示例,主要基于MDN的示例. 我们想要创建一个`Polygon`原型并继承它. 我们将从ES5开始:
 
 ```javascript
 function Polygon(height, width) {
@@ -135,7 +135,8 @@ function Polygon(height, width) {
 }
 ```
 
-Cool, so we got to the ES6 class `constructor`, which works just like a constructor in ES5. But now how do we implement the `area()` getter? Well, not very nicely — let's back up and rewrite what we just wrote:
+很酷, 所以我们得到了ES6类`constructor`,它就像ES5中的构造函数一样工作. 但是现在我们如何实现`area()` getter? 
+很好,但不是非常好 - 让我们备份并重写我们刚写的内容:
 
 ```javascript
 function Polygon(height, width) {
@@ -154,10 +155,10 @@ const rectangle = new Polygon(10, 5);
 
 console.log(rectangle.area);
 ```
+好吧,这样有效,但看看有多难以推理. 我们必须提前计划我们想要设置的属性,并且`area`不是动态计算的 - 它是在`Polygon`被实例化然后被遗忘时设置的,所以如果不知怎的话`Polygon`的`height` 和`width`改变了, 它的"区域"需要单独更新. 糟糕.
 
-Okay, so that worked, but look at how difficult it is to reason about. We have to plan in advance for the properties that we want to set, and `area` is not calculated dynamically — it's set when the `Polygon` is instantiated and then forgotten about, so if somehow a `Polygon`'s `height` and `width` changed, its `area` would need to be updated separately. Gross.
+此外,扩展这个ES5`Polygon`有点麻烦:
 
-Moreover, extending this ES5 `Polygon` is a bit onerous:
 
 ```javascript
 function Square(sideLength) {
@@ -172,14 +173,14 @@ const square = new Square(5);
 console.log(square);
 ```
 
-Well, that seems like it just about works. But what if we check the variable `square`'s constructor?
+嗯,这似乎只是作品. 但是如果我们检查变量`square`的构造函数呢？
 
 ```javascript
 // [Function: Polygon]
 square.constructor;
 ```
 
-That's not right. It should be `[Function: Square]`. We can fix it, though:
+那是不对的. 它应该是`[Function:Square]`. 我们可以解决它,但是:
 
 ```javascript
 Square.prototype.constructor = Square;
@@ -190,11 +191,11 @@ const square2 = new Square(6);
 square2.constructor
 ```
 
-Eh, close enough?
+呃,足够接近？
 
-(Note: The point here isn't to land on a perfect approach to object inheritance in JavaScript, it's to show that such a goal isn't feasible and won't be achieved in a nice way.)
+(注意:这里的要点不是基于 JavaScript 中对象继承的完美方法,而是要表明这样的目标是不可行的,并且不会以一种很好的方式实现.)
 
-Now let's try with ES6:
+现在让我们试试ES6:
 
 ```javascript
 class Polygon {
@@ -218,7 +219,7 @@ const rectangle = new Polygon(10, 5);
 console.log(rectangle.area);
 ```
 
-Let's extend it:
+让我们来扩展它:
 
 ```javascript
 class Square extends Polygon {
@@ -239,13 +240,13 @@ mySquare.constructor;
 mySquare.area;
 ```
 
-Whoa. That was easy.
+哇. 这很容易.
 
 ![that was easy](http://i.giphy.com/zcCGBRQshGdt6.gif)
 
-### Arrow functions
+### 箭头函数
 
-[Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) provide not only a terser way to define a function but also _lexically bind the current `this` value_. This ain't your grandpa's JS.
+[Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) 不仅提供了一种定义函数的简洁方法,而且还提供了绑定当前"this"的函数.这不是大爷的JS.
 
 ```javascript
 const greet = (greeting, person) => {
@@ -269,7 +270,7 @@ var a2 = a.map(function(s){ return s.length });
 var a3 = a.map(s => s.length);
 ```
 
-Fat arrows also have implicit returns — the following are equivalent:
+箭头也有隐含的返回 —— 以下是等价的:
 
 ```javascript
 var a3 = a.map(s => s.length);
@@ -278,7 +279,7 @@ var a4 = a.map(s => {
 });
 ```
 
-If the function only accepts one argument, parentheses are optional:
+如果函数只接受一个参数,括号是可选的:
 
 ```javascript
 // this...
@@ -288,7 +289,7 @@ var a3 = a.map(s => s.length);
 var a3 = a.map((s) => s.length);
 ```
 
-If there are zero or two or more arguments, though, you must use parens:
+如果有零点或两个或更多个参数,你必须使用括号:
 
 ```javascript
 var evens = [1, 2, 3, 4].reduce((memo, i) => {
