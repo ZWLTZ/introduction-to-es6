@@ -303,11 +303,8 @@ var evens = [1, 2, 3, 4].reduce((memo, i) => {
 
 ### Promises
 
-[Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) offer a new way of handling asynchronicity.
-
-We'll cover them in greater detail in a later lesson, but for now know that `Promise` is available globally in Node.js.
-
-Also know that it's awesome.
+[Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) 提供了一种处理异步性的新方法。
+我们将在后面的课程中更详细地介绍它们，但是现在知道 Node.js 中全局可以使用`Promise`。
 
 ```javascript
 const promise = new Promise((resolve, reject) => {
@@ -327,7 +324,7 @@ promise.then(result => {
 
 ### Object literal extensions
 
-ES6 gives us a number of handy [new ways to deal with objects](https://github.com/lukehoban/es6features#enhanced-object-literals). They're features that you either wish JavaScript had, or ones you didn't know you needed.
+ES6给了我们许多便利的地方。 [处理对象的新方法](https://github.com/lukehoban/es6features#enhanced-object-literals).它们是希望您拥有JavaScript的功能，或者您不需要的功能。
 
 ```javascript
 const prop = function() {
@@ -357,11 +354,13 @@ myObj.prop()
 myObj.shout()
 ```
 
-### Spread operator
+### 扩展操作
 
-The [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator) — `...` — is unassuming but incredibly powerful.
+这个 [扩展操作](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator) — `...` — 是简单但难以置信的强大。
 
-We can use it for arrays:
+
+
+我们可以用它来排列:
 
 ```javascript
 const a = [1, 2, 3]
@@ -371,7 +370,7 @@ const b = [0, ...a, 4, 5]
 b
 ```
 
-functions:
+功能:
 
 ```javascript
 function printArgs() {
@@ -386,29 +385,29 @@ printArgs(...a);
 ```
 
 
-### Template Strings
+### 模版字符串
 
-[Template strings](https://nodejs.org/en/docs/es6/) in ES6 are most commonly used for string interpolation. Instead of writing:
+[Template strings](https://nodejs.org/en/docs/es6/) 在ES6中最常用于字符串插值. 而不是写:
 
 ```javascript
 var foo = 'bar';
 var sentence = 'I went to the ' + foo + ' after working in ES5 for too long.';
 ```
 
-we can now write:
+我们现在可以写:
 
 ```javascript
 var foo = 'bar';
 var sentence = `I went to the ${foo} after working in ES5 for too long.`;
 ```
 
-and we'll get the same result.
+并且我们会获得相同的结果:
 
-You can also use _tagged template literals_ to perform more advanced manipulation:
+您还可以使用_tagged模板literals_来执行更高级的操作:
 
-A _tag_ is simply a function whose first argument is an array of strings and whose subsequent arguments are the values of the substitution expressions (the things in `${}`).
+这个_tag_只是一个函数, 其第一个参数是一个字符串数组, 其后续参数是替换表达式的值 (the things in `${}`).
 
-Here's the example from [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals):
+以下是的示例[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_template_literals):
 
 ```javascript
 var a = 5;
@@ -427,23 +426,23 @@ tag`Hello ${ a + b } world ${ a * b }`;
 // "Bazinga!"
 ```
 
-### Destructuring
+### 解构
 
-Destructuring makes it easier than ever to pull values out of objects and arrays and store them in variables. We destructure an array by putting our new variable names at the corresponding index and an object by giving our variable the same name as the key we are interested in.
+解构比以往更容易从对象和数组中提取值,并将它们存储在变量中. 我们通过将新变量名放在相应的索引上, 并通过将变量名赋予与我们感兴趣的键相同的名称来构造数组.
 
 ```js
 const [a, b] = [1, 2];
 // a === 1 && b === 2
 
 const { a, b } = { a: 1, b: 2 }
-// a === 1 && b === 2
+//结论 a === 1 && b === 2
 ```
 
-To see what other amazing things we can to with destructuring, check out the [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
+要了解我们可以解构的其他令人惊奇的事情，请查看[docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
-## Conclusion
+## 
 
-There are _tons_ of new features in ES6, and we don't have time to cover them all here. Check out [the docs](https://nodejs.org/en/docs/es6/), play around in console, and have fun!
+ES6中有_tons_个新功能，我们没有时间在这里全部介绍它们。 查看 [the docs](https://nodejs.org/en/docs/es6/), play around in console, and have fun!
 
 ## Resources
 
