@@ -322,7 +322,7 @@ promise.then(result => {
 }).catch(error => handleError(error))
 ```
 
-### Object literal extensions
+### 对象字面量扩展
 
 ES6给了我们许多便利的地方。 [处理对象的新方法](https://github.com/lukehoban/es6features#enhanced-object-literals).它们是希望您拥有JavaScript的功能，或者您不需要的功能。
 
@@ -354,9 +354,9 @@ myObj.prop()
 myObj.shout()
 ```
 
-### 扩展操作
+### 展开操作符
 
-这个 [扩展操作](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator) — `...` — 是简单但难以置信的强大。
+这个 [展开操作符](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator) — `...` — 是简单但难以置信的强大。
 
 
 
